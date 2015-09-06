@@ -1,18 +1,12 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+  // this code only runs on the client
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
+  Template.body.helpers({
+    tasks: [
+    { text: "This is task one" },
+    { text: "This is task two"},
+    { text : "This is task three"}
+    ]
   });
 }
 
